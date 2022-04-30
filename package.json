@@ -1,0 +1,32 @@
+{
+  "name": "parse-json-safe",
+  "version": "0.0.0",
+  "description": "parse json without try catch",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build:common": "tsc",
+    "clean": "rm -rf dist es",
+    "build:esm": "tsc --module es2022 --outDir es",
+    "prepublishOnly": "npm test && npm run clean && npm run build:common && npm run build:esm"
+  },
+  "keywords": [
+    "json",
+    "parse"
+  ],
+  "author": "smile",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-typescript": "^7.16.7",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^28.0.3",
+    "jest": "^28.0.3",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {}
+}
