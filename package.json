@@ -1,6 +1,6 @@
 {
   "name": "parse-json-safe",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "parse json without try catch",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
