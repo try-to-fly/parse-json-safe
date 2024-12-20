@@ -7,10 +7,12 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "clean": "rm -rf dist es",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "prepublishOnly": "npm test && npm run clean && npm run build"
+    "prepublishOnly": "npm test && npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "json",
     "parse"
