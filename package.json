@@ -2,20 +2,23 @@
   "name": "parse-json-safe",
   "version": "0.0.1",
   "description": "parse json without try catch",
-  "main": "dist/index.js",
-  "module": "es/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "build:common": "tsc",
     "clean": "rm -rf dist es",
-    "build:esm": "tsc --module es2022 --outDir es",
-    "prepublishOnly": "npm test && npm run clean && npm run build:common && npm run build:esm"
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "prepublishOnly": "npm test && npm run clean && npm run build"
   },
   "keywords": [
     "json",
     "parse"
   ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/try-to-fly/parse-json-safe"
+  },
   "author": "smile",
   "license": "ISC",
   "devDependencies": {
@@ -26,7 +29,7 @@
     "@types/jest": "^27.4.1",
     "babel-jest": "^28.0.3",
     "jest": "^28.0.3",
+    "tsup": "^8.3.5",
     "typescript": "^4.6.4"
-  },
-  "dependencies": {}
+  }
 }
